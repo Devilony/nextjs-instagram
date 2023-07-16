@@ -1,12 +1,12 @@
 'use client';
-import { ChangeEvent, DragEvent, FormEvent, useRef, useState } from 'react';
 import { AuthUser } from '../model/user';
-import PostUserAvatar from './PostUserAvatar';
-import Button from './ui/Button';
-import FilesIcon from './ui/icons/FilesIcon';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { ChangeEvent, DragEvent, FormEvent, useRef, useState } from 'react';
+import PostUserAvatar from './PostUserAvatar';
+import Button from './ui/Button';
 import GridSpinner from './GridSpinner';
+import FilesIcon from './ui/icons/FilesIcon';
 
 type Props = {
   user: AuthUser;
@@ -43,9 +43,9 @@ export default function NewPost({ user: { username, image } }: Props) {
     const files = e.dataTransfer?.files;
     if (files && files[0]) {
       setFile(files[0]);
-      console.log(files[0]);
     }
   };
+
   const handleSubmit = (e: FormEvent) => {
     if (!file) return;
 
